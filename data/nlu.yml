@@ -74,8 +74,6 @@ nlu:
     - eu gostaria de comprar passagens
     - eu gostaria de viajar
     - eu tenho interesse em viajar
-- intent: informar
-  examples: |
     - eu gostaria de viajar para [SAO](destino)
     - preciso de uma passagem para o [RIO](destino) de [BUS](classe)
     - preciso ver o preco de uma passagem [ONE_WAY] (itinerario) do [SAO] (origem) para [RIO] (destino)
