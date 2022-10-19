@@ -14,7 +14,7 @@ rules:
 
 - rule: Activate Passagem Form
   steps:
-  - intent: buscar_passagens_intent
+  - intent: comprar_passagem
   - action: simple_passagem_form
   - active_loop: simple_passagem_form
 
