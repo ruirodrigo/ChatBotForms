@@ -1,0 +1,88 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - oi
+    - olá
+    - ei
+    - bom dia
+    - boa tarde
+    - boa noite
+    - Ola
+- intent: goodbye
+  examples: |
+    - tchau
+    - até
+    - até mais
+    - até breve
+- intent: affirm
+  examples: |
+    - sim
+    - na verdade
+    - é claro
+    - perfeito
+    - correto
+- intent: deny
+  examples: |
+    - não
+    - nunca
+    - não acredito
+    - não gosto disso
+    - sem chance
+    - na verdade não
+- intent: mood_great
+  examples: |
+    - perfeito
+    - muito bom
+    - excelente
+    - incrível
+    - maravilhoso
+    - estou me sentindo muito bem
+    - estou ótimo
+    - estou bem
+    - bem
+- intent: mood_unhappy
+  examples: |
+    - triste
+    - muito triste
+    - infeliz
+    - mau
+    - muito mau
+    - horrível
+    - terrivel
+    - não muito bem
+    - extremamente triste
+    - tão triste
+- intent: bot_challenge
+  examples: |
+    - você é um bot?
+    - você é um humano?
+    - estou falando com um bot?
+    - estou falando com um human?
+- intent: comprar_passagem
+  examples: |
+    - buscar passagens
+    - viajar
+    - quero viajar
+    - sugestões de viagem
+    - passagens de avião
+    - passagens
+    - avião
+    - viajar de avião
+    - comprar passagem
+    - preço de passagem
+    - eu gostaria de comprar passagens
+    - eu gostaria de viajar
+    - eu tenho interesse em viajar
+- intent: informar
+  examples: |
+    - eu gostaria de viajar para [SAO](destino)
+    - preciso de uma passagem para o [RIO](destino) de [BUS](classe)
+    - preciso ver o preco de uma passagem [ONE_WAY] (itinerario) do [SAO] (origem) para [RIO] (destino)
+    - passagem para o [RIO] (destino)
+    - passagem de [RIO] (origem)
+    - passagem para [SAO] (destino)
+    - passagem de [SAO] (origem)
+    - partindo para o [RIO] (destino)
+    - partindo de [SAO] (destino)
+    - partindo para [SAO] (destino)
