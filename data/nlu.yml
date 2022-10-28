@@ -21,10 +21,13 @@ nlu:
 - intent: affirm
   examples: |
     - sim
-    - na verdade
     - é claro
-    - perfeito
+    - claro
+    - sin
     - correto
+    - ss
+    - s
+    - ok
 
 - intent: deny
   examples: |
@@ -33,7 +36,6 @@ nlu:
     - não acredito
     - não gosto disso
     - sem chance
-    - na verdade não
 
 - intent: mood_great
   examples: |
