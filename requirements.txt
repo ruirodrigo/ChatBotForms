@@ -1,0 +1,2 @@
+setuptools==65.5.0
+rasa==3.3.0

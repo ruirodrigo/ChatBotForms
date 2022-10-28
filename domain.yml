@@ -63,7 +63,7 @@ slots:
     mappings:
     - type: from_entity
       entity: data_retorno
-      
+
 forms:
   simple_passagem_form:
     required_slots:
@@ -84,41 +84,56 @@ actions:
 - utter_perguntar_destino
 - utter_perguntar_itinerario
 - utter_perguntar_origem
+
 responses:
   utter_greet:
   - text: Olá! Como você está?
   - text: Olá, tudo bem?
   - text: Ei! Como você está?
   - text: Olá, você está bem?
+
   utter_cheer_up:
   - text: 'Aqui está algo para animá-lo:'
     image: https://demo.sirv.com/nuphar.jpg?w=200&h=200
+
   utter_did_that_help:
   - text: Isso te ajudou?
+
   utter_happy:
   - text: Ótimo, vamos em frente!
   - text: Que bom!
+
   utter_goodbye:
   - text: Tchau!
   - text: Até Mais!
+
   utter_iamabot:
   - text: Eu sou um Bot criado pelo G5 - ElisabethRuWilson.
+
   utter_perguntar_classe:
   - text: Você tem preferencia pela classe do voo (ECO/BUS/PEC/PST)?
+
   utter_perguntar_data_embarque:
   - text: Qual a data pretendida para embarque (yyyy-mm-dd)?
+
   utter_perguntar_data_retorno:
   - text: Retornará quando (yyyy-mm-dd)?
+
   utter_perguntar_destino:
   - text: O destino que deseja ir?
+
   utter_perguntar_itinerario:
   - text: Será passagem somente de ida (ONE_WAY/ROUND_TRIP)?
+
   utter_perguntar_origem:
   - text: Qual seria o local de embarque de sua viagem?
+
   utter_perguntar_viagem:
   - text: Vamos programar uma viagem?
+
   utter_submit:
   - text: Buscando o melhor preço das passagens! Aguarde um instante...
+
   utter_passagem_slots:
   - text: Buscando passagem de {origem} x {destino}
 
