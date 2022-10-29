@@ -1,0 +1,7 @@
+models/
+venv/
+.venv/
+tests/
+.rasa/
+graph.html
+*.pyc

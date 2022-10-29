@@ -1,4 +1,5 @@
 version: "3.1"
+
 nlu:
 - intent: greet
   examples: |
@@ -9,30 +10,42 @@ nlu:
     - boa tarde
     - boa noite
     - Ola
-- intent: goodbye
-  examples: |
-    - tchau
-    - até
-    - até mais
-    - até breve
+
+# - intent: goodbye
+#   examples: |
+#     - tchau
+#     - tchal
+#     - até
+#     - até mais
+#     - até breve
+#     - obrigado
+#     - brigado
+
 - intent: affirm
   examples: |
     - sim
-    - na verdade
     - é claro
-    - perfeito
+    - claro
+    - sin
     - correto
+    - ss
+    - s
+    - ok
+
 - intent: deny
   examples: |
     - não
+    - nao
+    - naum
+    - nn
+    - n
     - nunca
-    - não acredito
-    - não gosto disso
-    - sem chance
-    - na verdade não
+    - não quero
+
 - intent: mood_great
   examples: |
-    - perfeito
+    - estou perfeito
+    - estou muito bem
     - muito bom
     - excelente
     - incrível
@@ -41,24 +54,30 @@ nlu:
     - estou ótimo
     - estou bem
     - bem
+    - tudo bem
+
 - intent: mood_unhappy
   examples: |
     - triste
     - muito triste
+    - estou meio triste
     - infeliz
     - mau
+    - mal
+    - muito mal
     - muito mau
     - horrível
     - terrivel
     - não muito bem
-    - extremamente triste
-    - tão triste
-- intent: bot_challenge
-  examples: |
-    - você é um bot?
-    - você é um humano?
-    - estou falando com um bot?
-    - estou falando com um human?
+    - não muito bom
+    - não estou bem
+    - não estou bom
+    - estou extremamente triste
+    - tô tão triste
+    - tô triste
+    - tô cansado
+    - estou indo
+
 - intent: comprar_passagem
   examples: |
     - buscar passagens
@@ -74,13 +93,45 @@ nlu:
     - eu gostaria de comprar passagens
     - eu gostaria de viajar
     - eu tenho interesse em viajar
-    - eu gostaria de viajar para [SAO](destino)
-    - preciso de uma passagem para o [RIO](destino) de [BUS](classe)
-    - preciso ver o preco de uma passagem [ONE_WAY] (itinerario) do [SAO] (origem) para [RIO] (destino)
-    - passagem para o [RIO] (destino)
-    - passagem de [RIO] (origem)
-    - passagem para [SAO] (destino)
-    - passagem de [SAO] (origem)
-    - partindo para o [RIO] (destino)
-    - partindo de [SAO] (destino)
-    - partindo para [SAO] (destino)
+
+# - intent: classe
+#   examples: |
+#     - quero classe [econômica](classe)
+#     - [econômica](classe)
+#     - [eco](classe)
+#     - quero [business](classe)
+#     - [business](classe)
+#     - [bus](classe)
+#     - quero [primeira classe](classe)
+#     - [primeira classe](classe)
+#     - [prime](classe)
+#     - quero [1 classe](classe)
+#     - quero [1ª classe](classe)
+
+# - intent: embarque
+#   examples: |
+#     - para ir [2022-10-25](data_embarque)
+#     - quero para ir [2022-12-21](data_embarque)
+#     - ir em [2022-04-12](data_embarque)
+#     - ir [2022-11-24](data_embarque)
+
+# - intent: retorno
+#   examples: |
+#     - voltar [2022-10-25](data_retorno)
+#     - volta [2022-12-21](data_retorno)
+#     - volto dia [2022-04-12](data_retorno)
+#     - voltar no [2022-11-23](data_retorno)
+
+# - intent: destino
+#   examples: |
+#     - eu gostaria de viajar para [SAO](destino)
+#     - preciso de uma passagem para o [RIO](destino)
+#     - para [RIO] (destino)
+#     - pro [RIO] (destino)
+#     - passagem para o [RIO] (destino)
+#     - passagem de [RIO] (origem)
+#     - passagem para [SAO] (destino)
+#     - passagem de [SAO] (origem)
+#     - partindo para o [RIO] (destino)
+#     - partindo de [SAO] (destino)
+#     - partindo para [SAO] (destino)

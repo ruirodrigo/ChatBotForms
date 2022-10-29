@@ -1,126 +1,156 @@
 version: '3.1'
 
 intents:
-- affirm
-- bot_challenge
-- buscar_passagens_intent
-- deny
-- goodbye
 - greet
-- informar_classe_intent
-- informar_data_embarque_intent
-- informar_data_retorno_intent
-- informar_destino_intent
-- informar_itinerario_intent
-- informar_origem_intent
+# - goodbye
+- affirm
+- deny
 - mood_great
 - mood_unhappy
-- nlu_fallback
-- request_passagem_form
 - comprar_passagem
-- informar
+- classe
+- embarque
+- retorno
+- destino
+- nlu_fallback
 
 entities:
-- origem
-- destino
+- classe
 - data_embarque
 - data_retorno
-- classe
-- itinerario
+- destino
+# - origem
+# - itinerario
 
 slots:
-  origem:
-    type: text
-    mappings:
-    - type: from_entity
-      entity: origem
+  # origem:
+  #   type: text
+  #   mappings:
+  #   - type: from_entity
+  #     entity: origem
   destino:
     type: text
+    influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: destino
+    # - type: from_entity
+    - type: from_text
+      conditions:
+        - active_loop: simple_passagem_form
+          requested_slot: destino
+      # entity: destino
   classe:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: classe
-  itinerario:
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: itinerario
+    # - type: from_entity
+    - type: from_text
+      conditions:
+        - active_loop: simple_passagem_form
+          requested_slot: classe
+      # entity: classe
+  # itinerario:
+  #   type: text
+  #   influence_conversation: true
+  #   mappings:
+  #   - type: from_entity
+  #     entity: itinerario
   data_embarque:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: data_embarque
+    # - type: from_entity
+    - type: from_text
+      conditions:
+        - active_loop: simple_passagem_form
+          requested_slot: data_embarque
+      # entity: data_embarque
+      # intent: embarque
   data_retorno:
     type: text
     influence_conversation: true
     mappings:
-    - type: from_entity
-      entity: data_retorno
-      
+    # - type: from_entity
+    - type: from_text
+      conditions:
+        - active_loop: simple_passagem_form
+          requested_slot: data_retorno
+      # entity: data_retorno
+      # intent: retorno
+
 forms:
   simple_passagem_form:
     required_slots:
-    - origem
-    - destino
+    - classe
     - data_embarque
     - data_retorno
-    - classe
-    - itinerario
+    - destino
+#     - origem
+#     - itinerario
 
-actions:
-- action_buscar_passagens
-- simple_passagem_form
-- utter_greet
-- utter_perguntar_classe
-- utter_perguntar_data_embarque
-- utter_perguntar_data_retorno
-- utter_perguntar_destino
-- utter_perguntar_itinerario
-- utter_perguntar_origem
+# actions:
+# - action_buscar_passagens
+# - simple_passagem_form
+# - utter_greet
+# - utter_perguntar_classe
+# - utter_perguntar_data_embarque
+# - utter_perguntar_data_retorno
+# - utter_perguntar_destino
+# - utter_perguntar_itinerario
+# - utter_perguntar_origem
+
 responses:
   utter_greet:
   - text: Olá! Como você está?
   - text: Olá, tudo bem?
   - text: Ei! Como você está?
   - text: Olá, você está bem?
+
   utter_cheer_up:
   - text: 'Aqui está algo para animá-lo:'
     image: https://demo.sirv.com/nuphar.jpg?w=200&h=200
+
   utter_did_that_help:
   - text: Isso te ajudou?
+
   utter_happy:
   - text: Ótimo, vamos em frente!
   - text: Que bom!
+
   utter_goodbye:
   - text: Tchau!
   - text: Até Mais!
-  utter_iamabot:
-  - text: Eu sou um Bot criado pelo G5 - ElisabethRuWilson.
-  utter_perguntar_classe:
+
+# utters da rede neural
+  # utter_perguntar_classe:
+  # - text: Você tem preferencia pela classe do voo (ECO/BUS/PEC/PST)?
+
+  # utter_perguntar_data_embarque:
+  # - text: Qual a data pretendida para embarque (yyyy-mm-dd)?
+
+  # utter_perguntar_data_retorno:
+  # - text: Retornará quando (yyyy-mm-dd)?
+
+  # utter_perguntar_destino:
+  # - text: O destino que deseja ir?
+
+# utters do form
+  utter_ask_simple_passagem_form_classe:
   - text: Você tem preferencia pela classe do voo (ECO/BUS/PEC/PST)?
-  utter_perguntar_data_embarque:
+
+  utter_ask_simple_passagem_form_data_embarque:
   - text: Qual a data pretendida para embarque (yyyy-mm-dd)?
-  utter_perguntar_data_retorno:
+
+  utter_ask_simple_passagem_form_data_retorno:
   - text: Retornará quando (yyyy-mm-dd)?
-  utter_perguntar_destino:
+
+  utter_ask_simple_passagem_form_destino:
   - text: O destino que deseja ir?
-  utter_perguntar_itinerario:
-  - text: Será passagem somente de ida (ONE_WAY/ROUND_TRIP)?
-  utter_perguntar_origem:
-  - text: Qual seria o local de embarque de sua viagem?
-  utter_perguntar_viagem:
-  - text: Vamos programar uma viagem?
-  utter_submit:
-  - text: Buscando o melhor preço das passagens! Aguarde um instante...
-  utter_passagem_slots:
-  - text: Buscando passagem de {origem} x {destino}
+
+  utter_fallback:
+  - text: Desculpe, não entendi o que você quis dizer.
+
+  utter_resumo:
+  - text: Suas escolhas foram '{classe}' '{data_embarque}' '{data_retorno}' '{destino}'
 
 session_config:
   session_expiration_time: 60
