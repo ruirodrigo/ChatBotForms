@@ -28,3 +28,16 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+# - story: comprar passagem
+#   steps:
+#   - intent: comprar_passagem
+#   - action: utter_perguntar_classe
+#   - intent: classe
+#   - action: utter_perguntar_data_embarque
+#   - intent: embarque
+#   - action: utter_perguntar_data_retorno
+#   - intent: retorno
+#   - action: utter_perguntar_destino
+#   - intent: destino
+#   - action: utter_resumo
